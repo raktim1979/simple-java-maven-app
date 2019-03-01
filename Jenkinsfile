@@ -10,6 +10,12 @@ pipeline {
         sh "mvn -B -DskipTests clean package"
       }
     }
+    stages {
+    stage('Test') {
+      steps {
+        sh "mvn -B -DskipTests clean package"
+      }
+    }
     stage('Deploy'){
       steps{
         sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
